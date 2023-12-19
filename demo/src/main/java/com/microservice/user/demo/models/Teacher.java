@@ -18,7 +18,6 @@ public class Teacher {
 
 	private String numero_aula;
 	private String especial;
-
     
 	public Teacher () {
 		
