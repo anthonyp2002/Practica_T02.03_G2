@@ -13,6 +13,8 @@ import com.microservice.user.demo.feingsUser.inscripciones;
 import com.microservice.user.demo.models.Course;
 import com.microservice.user.demo.models.Inscripciones;
 import com.microservice.user.demo.models.Persona;
+import com.microservice.user.demo.models.Student;
+import com.microservice.user.demo.models.Teacher;
 import com.microservice.user.demo.repository.UserRepository;
 
 @Service
@@ -32,9 +34,14 @@ public class userService {
         return userRepository.findAll();
         }
 
-    public Persona save(Persona use){
-        Persona nuevoUser = userRepository.save(use);
-        return nuevoUser;
+    public Student save(Student use){
+        Student nuevoStudent = userRepository.save(use);
+        return nuevoStudent;
+    }
+
+	    public Teacher saveT(Teacher use){
+			Teacher nuevoTeacher = userRepository.save(use);
+        return nuevoTeacher;
     }
 
 	

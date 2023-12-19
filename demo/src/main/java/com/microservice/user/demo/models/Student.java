@@ -9,4 +9,21 @@ import jakarta.persistence.Table;
 @Table (name = "Student")
 public class Student extends Persona{
     
+	private String ciclo;
+    
+	public Student () {
+		
+	}
+	
+	public Student(String ciclo) {
+		this.ciclo = ciclo;
+	}
+
+	public String getCiclo() {
+		return ciclo;
+	}
+	public void setCiclo(String ciclo) {
+		this.ciclo = ciclo;
+	}
+
 }

@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.microservice.user.demo.models.Course;
 import com.microservice.user.demo.models.Inscripciones;
 import com.microservice.user.demo.models.Persona;
+import com.microservice.user.demo.models.Student;
+import com.microservice.user.demo.models.Teacher;
 import com.microservice.user.demo.services.userService;
 
 @RestController
@@ -35,9 +37,15 @@ public class UserController {
         return ResponseEntity.ok(use);
     }
 
-	@PostMapping("/save")
-	public ResponseEntity<Persona> save (@RequestBody Persona us){
-		Persona use = userService.save(us);
+	@PostMapping("/save/student")
+	public ResponseEntity<Student> save (@RequestBody Student us){
+		Student use = userService.save(us);
+		return ResponseEntity.ok(use);
+	}
+
+    @PostMapping("/save/teacher")
+	public ResponseEntity<Teacher> save (@RequestBody Teacher us){
+		Teacher use = userService.saveT(us);
 		return ResponseEntity.ok(use);
 	}
 
