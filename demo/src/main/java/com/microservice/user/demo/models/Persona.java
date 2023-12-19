@@ -1,13 +1,17 @@
 package com.microservice.user.demo.models;
 
+import jakarta.persistence.DiscriminatorColumn;
+import jakarta.persistence.DiscriminatorType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.InheritanceType;
 
 @Entity
-@Table (name = "persona")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "person",discriminatorType = DiscriminatorType.STRING)
 public class Persona {
 	
 	@Id
@@ -16,17 +20,25 @@ public class Persona {
 	
 	private String nombre;
 	private String apellido;
-	private String correo;
+	private String cedula;
+	private String fe_nacimi;
+	private String sexo;
+	private String dirrecion;		
+	private String telefono;
 	
 	public Persona () {
 		
 	}
 	
-	public Persona(Long id, String nombre, String apellido, String correo) {
+	public Persona(Long id, String nombre, String apellido, String cedula, String fe_nacimi,String sexo,String dirrecion,String telefono ) {
 		this.id = id;
 		this.nombre = nombre;
 		this.apellido = apellido;
-		this.correo = correo;
+		this.cedula = cedula;
+		this.fe_nacimi = fe_nacimi;
+		this.cedula = cedula;
+		this.sexo = sexo;
+		this.telefono = telefono;
 	}
 	public Long getId() {
 		return id;
@@ -46,11 +58,34 @@ public class Persona {
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
 	}
-	public String getCorreo() {
-		return correo;
+	public String getCedula() {
+		return cedula;
 	}
-	public void setCorreo(String correo) {
-		this.correo = correo;
+	public void setCedula(String cedula) {
+		this.cedula = cedula;
 	}
-	
+	public String getSexo() {
+		return sexo;
+	}
+	public void setSexo(String sexo) {
+		this.sexo = sexo;
+	}
+	public String getFe_nacimi() {
+		return fe_nacimi;
+	}
+	public void setFe_nacimi(String fe_nacimi) {
+		this.fe_nacimi = fe_nacimi;
+	}
+	public String getDirrecion() {
+		return dirrecion;
+	}
+	public void setDirrecion(String dirrecion) {
+		this.dirrecion = dirrecion;
+	}
+	public String getTelefono() {
+		return telefono;
+	}
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
+	}	
 }
