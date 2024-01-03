@@ -17,7 +17,9 @@ import com.microservice.user.demo.models.Course;
 import com.microservice.user.demo.models.Inscripciones;
 import com.microservice.user.demo.models.Persona;
 import com.microservice.user.demo.models.Student;
+import com.microservice.user.demo.models.Tarea;
 import com.microservice.user.demo.models.Teacher;
+import com.microservice.user.demo.models.Class;
 import com.microservice.user.demo.services.userService;
 
 @RestController
@@ -90,4 +92,39 @@ public class UserController {
 		Map<String,Object> result = userService.getCour(id);
 		return ResponseEntity.ok(result);
 	}
+
+	//Clases
+    @PostMapping("/class/save")
+	public ResponseEntity<Class> saveClass(@RequestBody Class cl){
+		Class nueClas = userService.saveClass(cl);
+		return ResponseEntity.ok(nueClas);
+	} 
+
+	
+    @GetMapping("class/getClassall")
+    public ResponseEntity<List<Class>> listallClass(){
+        List<Class> cou = userService.getallClass();
+        if(cou.isEmpty()){
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(cou);
+    }
+
+	//Tarea
+    @PostMapping("/tarea/save")
+	public ResponseEntity<Tarea> saveTarea(@RequestBody Tarea ta){
+		Tarea tare = userService.saveTare(ta);
+		return ResponseEntity.ok(tare);
+	} 
+
+	
+    @GetMapping("tarea/getTareasall")
+    public ResponseEntity<List<Tarea>> listallTare(){
+        List<Tarea> tare = userService.getallTare();
+        if(tare.isEmpty()){
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(tare);
+    }	
+
 }

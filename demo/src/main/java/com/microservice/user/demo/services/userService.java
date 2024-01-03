@@ -9,11 +9,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.microservice.user.demo.feingsUser.Courses;
+import com.microservice.user.demo.feingsUser.TareaFeings;
 import com.microservice.user.demo.feingsUser.inscripciones;
+import com.microservice.user.demo.feingsUser.ClassFeings;
+import com.microservice.user.demo.models.Class;
 import com.microservice.user.demo.models.Course;
 import com.microservice.user.demo.models.Inscripciones;
 import com.microservice.user.demo.models.Persona;
 import com.microservice.user.demo.models.Student;
+import com.microservice.user.demo.models.Tarea;
 import com.microservice.user.demo.models.Teacher;
 import com.microservice.user.demo.repository.UserRepository;
 
@@ -28,6 +32,12 @@ public class userService {
 	
 	@Autowired
 	private Courses couFeigns;
+
+	@Autowired
+	private TareaFeings taFeigns;
+
+	@Autowired
+	private ClassFeings clasFeingns;
 
     //Persona
     public List<Persona> getAll(){
@@ -107,4 +117,24 @@ public class userService {
 		return result;
 	}
 
+	//Clases
+	public Class saveClass(Class cla) {
+		System.err.println(cla);
+        Class clas = clasFeingns.createClaseTema(cla);
+        return clas;
+	} 
+
+	public List<Class> getallClass(){
+		return clasFeingns.allList();
+	}
+
+	//Tarea
+	public Tarea saveTare(Tarea tare) {
+		System.err.println(tare);
+        Tarea tar = taFeigns.createTarea(tare);
+        return tar;
+	} 	
+	public List<Tarea> getallTare(){
+		return taFeigns.allList();
+	}
 }
