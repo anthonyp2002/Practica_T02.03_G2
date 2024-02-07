@@ -1,0 +1,161 @@
+/* nombre-del-componente.component.css */
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente el contenido */
+  }
+  
+  .create-class-container,
+  .class-list-container {
+    padding: 20px;
+    margin-bottom: 20px; /* Ajusta el espacio entre los contenedores según sea necesario */
+  }
+  
+  .create-class-container {
+    width: 90%;
+    margin-top: 40px;
+    border-radius: 25px;
+    background-color: black; /* Color para la sección "Crear Clase" */
+    height: 100px;
+  }
+  .custom-message {
+    border-radius: 20px;
+    background-color: #dff0d8;
+    color: #3c763d;
+    padding: 15px;
+    margin-top: 20px;
+    text-align: center;
+}
+  .class-list-container {
+    width: 100%;
+  }
+  
+  .center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente el contenido dentro de este contenedor */
+  }
+  
+  .header-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .l {
+    margin-right: 10px;
+    font-size: 18px;
+  }
+  
+  .btn {
+    margin-top: 10px;
+    background-color: #00b383;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .form-inline {
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+
+
+}
+
+.smaller-form {
+  height: 50px;
+}
+  .form-floating{
+    margin-left: 20px;
+  }
+
+  .form-select{
+    margin-left: 20px;
+    width: 250px;
+    height: 55px;
+  }
+
+  .header-container{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .btn-form{
+    margin-left: 20px;
+    height: 40px;
+    width: 150;
+  }
+
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container-tecns {
+    position: relative;
+    margin: 20px 20px 40px 20px;
+  }
+  
+  .title {
+    margin-top: 20;
+    font-size: 35px;
+    color: #242424;
+    
+  }
+  
+  .title-container h2 {
+    font-weight: bolder;
+    margin: 20px;
+  }
+  
+  .title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+  
+  .title-container img {
+    width: 40px;
+    margin-left: 10px;
+  }
+  
+  .tecns-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+    margin: 1rem;
+  }
+  
+  .tecns {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 2rem;
+    margin: 0px;
+  }
+  
+  .tecn-card {
+    background: #2b2b2bf8;
+    border: 0.1rem solid #a3a3a3;
+    border-radius: 2rem;
+    padding: 2rem;
+    flex-grow: 1;
+    flex-basis: 500px;
+    height: 280px;
+  }
+  
+  .title-tecns {
+    font-weight: bolder;
+    font-size: 30px;
+    color: #fff;
+  }
+  
+  .desc {
+    font-size: 17px;
+    color: #fff;
+  }

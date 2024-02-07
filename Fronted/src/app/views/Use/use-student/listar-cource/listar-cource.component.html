@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <app-navbar></app-navbar>
+    <div class="from-container">
+        <div class="row">
+            <div *ngIf="mostrarMensaje"  class="custom-message">
+                Te has inscrito en el curso correctamente..
+              </div>
+              <div *ngIf="mostrarMensaje_two"  class="custom-message">
+                Ya esta inscrito a este curso
+              </div>
+            <div *ngFor="let cursos of cource" [ngClass]="{'col-md-4': cource.length <= 4, 'col-md-3': cource.length > 4}" class="card-container">
+                <div class="card" style="width: 20rem;">
+                    <img src="../../../assets/img/materias.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="card-header"></div>
+                        <div class="card-text">
+                            <h5 class="card-title">{{cursos.name}}</h5>
+                            <p>{{cursos.descripccion}}</p>                       
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">
+                                <h5 class="card-title">Precio: {{cursos.price}}</h5>
+                            </div>
+                        </div>
+                        <a (click)="saveIns(cursos.id)" class="btn btn-primary">Inscribirse</a>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </div>   
+</body>
+</html>

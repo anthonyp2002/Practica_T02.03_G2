@@ -1,0 +1,49 @@
+body {
+	font-family: Arial, sans-serif;
+    background-position: center; 
+	justify-content: center;
+	align-items: center;
+    width: 100%;;
+    display: flex;
+    margin-top: 6% ;
+}
+
+.from-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.custom-message {
+    border-radius: 20px;
+    background-color: #dff0d8;
+    color: #3c763d;
+    padding: 15px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.card{
+	margin-top: 25px;
+    margin-left: 25px ;
+    border: 5;
+    background-color: white;
+}
+
+.card-img-top{
+    width: 300px;
+    margin-top: 10px;
+    margin-left: 10px;
+    align-items: center;
+}
+
+.card-body{
+    text-align: left;
+}
+
+.card-text{
+    margin-top: 18px;
+}

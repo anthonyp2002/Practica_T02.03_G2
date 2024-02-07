@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <app-nav></app-nav>
+  <main>
+    <div  class="ad">
+      <div class="left box-primary">
+        <div class="ass">
+          <img class="image" src="../../../assets/img/user.png" alt="" />
+        </div>
+        <div *ngIf="person && person.nombre">
+          <h3 class="username text-center"> {{ person.nombre }}  {{ person.apellido }}</h3>
+          <label >Maestro.</label>
+          <h6 for="">{{ person.especial }}</h6>
+          <label >Dirreccion.</label>
+          <h6 for="">{{ person.dirrecion }}</h6>
+          <label>Fecha de Nacimiento.</label>
+          <h6 for="">{{ person.fe_nacimi }}</h6>
+        </div>
+      </div> 
+    </div>
+  </main>
+</body>
+</html>

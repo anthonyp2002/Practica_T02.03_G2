@@ -1,0 +1,33 @@
+body {
+    background-image: url("../../../../assets/img/fon.png"); 
+    background-size: 100% 100%;
+    background-position: center; 
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.logo {
+    height: 200px;
+    margin-bottom: 10px;
+}
+
+.body {
+    max-width: 350px;
+    width: 100%;
+    text-align: center;
+}
+
+p{
+    text-align: center;
+    font-size: 1.2em;
+}
+
+

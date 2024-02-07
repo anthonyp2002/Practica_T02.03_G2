@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <app-nav></app-nav>
+<!-- nombre-del-componente.component.html -->
+
+<div class="main-container">
+  <div *ngIf="mostrarMensaje"  class="custom-message">
+    Te has inscrito en el curso correctamente..
+  </div>
+  <div *ngIf="mostrarMensaje_two"  class="custom-message">
+    Ya esta inscrito a este curso
+  </div>
+    <div class="create-class-container">
+      <div class="center-content">
+        <form action="#" method="post" class="form-inline">
+          <div class="form-floating">
+            <input [(ngModel)]="clase.tema" matInput name="tema" autocomplete="false" class="form-control" placeholder="Ingrese el tema de la clase">
+            <label>Tema</label>
+        </div>
+        <div class="form-floating mb-4 smaller-form">
+          <input [(ngModel)]="clase.cla" matInput name="apellido" autocomplete="false" class="form-control" placeholder="Ingrese las horas de clases">
+          <label>Horas de clases</label>
+      </div>
+        <select [(ngModel)]="idC" matInput name="curso" class="form-select select-label" aria-label="Selecciona un curso" spellcheck="true">
+          <option disabled selected>Selecciona un curso</option>
+          <option *ngFor="let curso of cursos" [value]=curso.id>{{curso.name}}</option>
+        </select>
+        <div class="btn-form">
+          <button class="btn" (click)="saveClass()">Agregar</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  
+    <div class="class-list-container">
+      <div class="container-tecns">
+        <div class="title-container">
+            <h2 class="title">Clases</h2>
+        </div>
+        <div class="tecns">
+            <div *ngFor="let cl of cla" class="tecn-card">
+                <div class="title-container">
+                    <h2 class="title-tecns">{{cl.tema}}</h2>
+                    <img src="../../../assets/img/materias.png" alt="Java"> 
+                </div>
+                <p class="desc">Horas {{cl.cla}}</p>
+            </div>
+        </div>
+        </div>
+    </div>
+  </div>
+</body>
+</html>

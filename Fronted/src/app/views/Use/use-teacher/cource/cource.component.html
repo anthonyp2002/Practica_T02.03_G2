@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-K0DokPn2l+PwhDDGjwkpbTk0yR6PXSl+/W6RXMlNrNBp4YqdnW0gF1+IsQGqZxU8M7J6gToj1iNlOSlS1V1Erw==" crossorigin="anonymous" />
+</head>
+<body>
+    <app-nav></app-nav>
+
+    <div class="main-container">
+      <div class="product-list">
+        <div class="container-tecns">
+          <div class="title-container">
+              <h2 class="title">Cursos</h2>
+          </div>
+          <div class="tecns">
+              <div *ngFor="let cursos of cursos" class="tecn-card">
+                  <div class="title-container">
+                      <h2 class="title-tecns">{{cursos.name}}</h2>
+                      <img src="../../../assets/img/materias.png" alt="Java"> 
+                  </div>
+                  <p class="desc">{{cursos.descripccion}}</p>
+              </div>
+              
+          </div>
+      </div>
+      </div>
+
+      <div class="b" *ngIf="showCreateProdu">
+        <button class="bt" id="toggleButton" (click)="toggleButton()">
+          <img class="flecha" src="../../../assets/img/ico.png" alt="Agregar" />         
+        </button>
+      </div>
+    
+      <div class="create-product" *ngIf="showCreateProduct">
+        <div class="header-container">
+          <button class="btn" (click)="toggle()"> 
+            <div class="asd">
+              <img class="cerrar" src="../../../assets/img/iconcr.png" alt="cerrar" />   
+            </div>
+          </button>
+          <h4 class="l">Crear Curso</h4>
+        </div>
+        <form action="#" method="post">
+          <div class="form-floating mb-3">
+            <input matInput [(ngModel)]="course.name"  name="name" autocomplete="false" class="form-control" placeholder="Ingrese nombre del curso">
+            <label>Nombre del Curso</label>
+        </div>
+            <div class="form-floating mb-3">
+              <input matInput [(ngModel)]="course.descripccion" name="descripccion" autocomplete="false" class="form-control" placeholder="Ingrese nombre">
+              <label>Descripcion</label>
+          </div>
+            <div class="form-floating mb-3">
+              <input matInput [(ngModel)]="course.price"  name="price" autocomplete="false" class="form-control" placeholder="Ingrese el precio del curso">
+              <label>Precio</label>
+          </div>
+        <select matInput matInput [(ngModel)]="course.anioLectivo" name="sexo" class="form-select select-label" aria-label="Disabled select example" spellcheck="true">
+          <option selected>Año Lectivo</option>
+          <option value="8-Basica">8-Basica</option>
+          <option value="9-Basica">9-Basica</option>
+          <option value="10-Basica">10-Basica</option>
+          <option value="1-Superior">1-Superior</option>
+          <option value="2-Superior">2-Superior</option>
+          <option value="3-Superior">3-Superior</option>
+
+          </select>
+              <div class="d-grid gap-2">
+                <button type="button" class="btn btn-success btn-lg" (click)="registerCourse()">Crear</button>
+            </div>
+        </form>
+    </div>
+  </div>
+</body>
+</html>

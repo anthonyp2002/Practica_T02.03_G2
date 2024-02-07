@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="conta">
+        <h1 class="logo">Registrarse</h1>
+        <div class="container">
+            <form action="/predecirRN/" method="post">
+                <div class="form-floating mb-3">
+                    <input matInput [(ngModel)]="persona.nombre" name="nombre" autocomplete="false" class="form-control" placeholder="Ingrese nombre">
+                    <label>Nombre</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input matInput [(ngModel)]="persona.apellido" name="apellido" autocomplete="false" class="form-control" placeholder="Ingrese apellido">
+                    <label>Apellido</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input matInput [(ngModel)]="persona.usuario" autocomplete="false" class="form-control" name="usuario" placeholder="Ingrese un usuario">
+                    <label>Usuario</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input matInput [(ngModel)]="persona.cedula" name="cedula" autocomplete="false" class="form-control" placeholder="Ingrese cedula">
+                    <label>Cedula</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input matInput [(ngModel)]="persona.fe_nacimi" name="nacimiento" autocomplete="false" class="form-control" placeholder="Ingrese la fecha de nacimiento">
+                    <label>Fecha de Nacimiento</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input matInput [(ngModel)]="persona.dirrecion" name="dirrecion" autocomplete="false" class="form-control" placeholder="Ingrese direccion">
+                    <label>Direcion</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input matInput [(ngModel)]="persona.telefono" name="telefono" autocomplete="false" class="form-control" placeholder="Ingrese telefono">
+                    <label>Telefono</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input matInput [(ngModel)]="persona.password" autocomplete="false" type="password" name="password" class="form-control" placeholder="Ingrese la contraseña">
+                    <label>Contraseña</label>
+                </div>
+                <select matInput [(ngModel)]="tipoUser" name="tipoUsuario" class="form-select" aria-label="Tipo de Usuario">                    <option selected disabled>Tipo de Usuario</option>
+                    <option value="Estudiante">Estudiante</option>
+                    <option value="Maestro">Maestro</option>
+                </select>
+                <select matInput [(ngModel)]="persona.sexo" name="sexo" class="form-select select-label" aria-label="Disabled select example" spellcheck="true">
+                    <option selected>Sexo</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
+                </select>
+                <div *ngIf="tipoUser === 'Estudiante'" >
+                    <select matInput [(ngModel)]="persona.ciclo"name="ciclo" class="form-select select-label" aria-label="Disabled select example" spellcheck="true">
+                        <option selected>Año Lectivo</option>
+                        <option value="8-Basica">8-Basica</option>
+                        <option value="9-Basica">9-Basica</option>
+                        <option value="10-Basica">10-Basica</option>
+                        <option value="1-Superior">1-Superior</option>
+                        <option value="2-Superior">2-Superior</option>
+                        <option value="3-Superior">3-Superior</option>
+              
+                        </select>
+                </div>
+
+                <div *ngIf="tipoUser === 'Maestro'">
+                    <div class="form-floating mb-3" id="a">
+                        <input matInput [(ngModel)]="persona.numero_aula" name="numero_aula" autocomplete="false" class="form-control" placeholder="Ingrese su numero de aula">
+                        <label>Numero de Aula</label>
+                    </div>
+                </div>
+                <div *ngIf="tipoUser === 'Maestro'">
+                    <div class="form-floating mb-3" id="a">
+                        <input matInput [(ngModel)]="persona.especial" name="especial" autocomplete="false" class="form-control" placeholder="Ingrese su asignatura">
+                        <label>Asignatura</label>
+                    </div>
+                </div>
+                <div class="d-grid gap-2">
+                    <button type="button" class="btn btn-primary btn-lg"  (click)="onSubmit()">Aceptar</button>
+                </div>
+                <p class="mt-3">Ya tienes una cuenta? <a routerLink="">Login</a></p>
+            </form>
+            <img class="logo" src="../../../assets/img/register.png" alt="img login">
+        </div>
+    </div>
+</body>
+</html>

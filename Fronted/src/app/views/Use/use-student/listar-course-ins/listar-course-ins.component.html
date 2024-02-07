@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <app-navbar></app-navbar>
+    <div class="container-tecns">
+        <div class="title-container">
+            <h2 class="title">Cursos Inscritos</h2>
+        </div>
+        <div class="tecns">
+            <div *ngFor="let cursos of cource" class="tecn-card">
+                <div class="title-container">
+                    <h2 class="title-tecns">{{cursos.name}}</h2>
+                    <img src="../../../assets/img/materias.png" alt="Java"> 
+                </div>
+                <p class="desc">{{cursos.descripccion}}</p>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
